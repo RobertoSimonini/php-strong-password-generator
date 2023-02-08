@@ -22,10 +22,16 @@ Scegliere il set di caratteri tra numeri, lettere, simboli o qualsiasi combinazi
 Milestone 5 (BONUS): Aggiungere la validazione
 */
 
-// Prendo il valore dell'input dell'utente 
-
+// Prendo la funzione da un file esterno 
 include './functions.php';
 
+// Starto la sessione e invio la password tramite $_SESSION
+session_start();
+$_SESSION['pass'] = randomPassword();
+
+// Redirecto al file password.php all'invio del form
+if (!empty($_SESSION['pass']))
+    header('Location: password.php');
 ?>
 
 
@@ -49,9 +55,7 @@ include './functions.php';
             <input type="number" class="form-control" name="pass_length" placeholder="Inserisci la lunghezza della Password">
             <button type="submit" class="btn btn-primary ms-3">Submit</button>
         </div>
-        <div>
-            <h3 class="form-control w-25 mx-auto text-center"> <?= randomPassword() ?> </h3>
-        </div>
+
     </form>
 </body>
 

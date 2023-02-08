@@ -3,6 +3,7 @@
 //Genero la password in modo random 
 function randomPassword()
 {
+    // Prendo il valore dell'input dell'utente 
     $password_length = $_GET['pass_length'] ?? '';
     $charachters = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789-*/";
     $pass = '';
@@ -13,6 +14,8 @@ function randomPassword()
     }
     return $pass;
 }
+
+
 
 ?>
 
