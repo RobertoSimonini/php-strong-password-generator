@@ -38,7 +38,6 @@ function randomPassword()
     return $pass;
 }
 
-var_dump(randomPassword());
 
 
 ?>
@@ -65,6 +64,7 @@ var_dump(randomPassword());
             <button type="submit" class="btn btn-primary ms-3">Submit</button>
         </div>
 
+        <input type="text" class="form-control w-25 mx-auto" name="password" id="" value="<?= randomPassword() ?>" placeholder="Password">
     </form>
 </body>
 
