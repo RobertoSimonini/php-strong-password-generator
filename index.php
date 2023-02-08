@@ -27,7 +27,7 @@ Milestone 5 (BONUS): Aggiungere la validazione
 //Genero la password in modo random 
 function randomPassword()
 {
-    $password_length = $_GET['pass_length'];
+    $password_length = $_GET['pass_length'] ?? '';
     $charachters = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789-*/";
     $pass = '';
 
@@ -63,8 +63,9 @@ function randomPassword()
             <input type="number" class="form-control" name="pass_length" placeholder="Inserisci la lunghezza della Password">
             <button type="submit" class="btn btn-primary ms-3">Submit</button>
         </div>
-
-        <input type="text" class="form-control w-25 mx-auto" name="password" id="" value="<?= randomPassword() ?>" placeholder="Password">
+        <div>
+            <h3 class="form-control w-25 mx-auto text-center"> <?= randomPassword() ?> </h3>
+        </div>
     </form>
 </body>
 
