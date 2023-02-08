@@ -28,14 +28,14 @@ Milestone 5 (BONUS): Aggiungere la validazione
 function randomPassword()
 {
     $password_length = $_GET['pass_length'];
-    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    $pass = array();
+    $charachters = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789-*/";
+    $pass = '';
 
     for ($i = 0; $i < $password_length; $i++) {
-        $n = rand(0, strlen($alphabet) - 1);
-        $pass[] = $alphabet[$n];
+        $n = rand(0, strlen($charachters) - 1);
+        $pass .= $charachters[$n];
     }
-    return implode($pass);
+    return $pass;
 }
 
 var_dump(randomPassword());
